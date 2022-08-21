@@ -11,36 +11,47 @@ function getPlayerChoice() {
   return playerChoice.toLowerCase();
 }
 
-// Pass computer and player selections on switches for each player selection, then output the result
+// Compare each choice to get a result, which is output as an int
 function playRound(computerSelection, playerSelection) {
-  const result;
-  
-  switch (playerSelection) {
+  let result;
+
+  if (playerSelection === 'rock') {
+    result = computerSelection === 'paper' ? 0 :
+    computerSelection === 'scissors' ? 1 : 2;
+  } else if (playerSelection === 'paper') {
+    result = computerSelection === 'scissors' ? 0 :
+    computerSelection === 'rock' ? 1 : 2;
+  } else {
+    result = computerSelection === 'rock' ? 0 :
+    computerSelection === 'paper' ? 1 : 2;
+  }
+  return result;
+}
+
+// Output round result to the console
+function logResult(result) {
+  switch (result) {
+    case 0:
+      console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
+      break;
     
-    case 'rock':
-      result = computerSelection === 'paper' ? 'You lose! Paper beats Rock' :
-      computerSelection === 'scissors' ? 'You win! Rock beats Scissors' :
-      'It\'s a tie!';
+    case 1:
+      console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
+      break;
 
-      return result;
-
-    case 'paper':
-      result = computerSelection === 'scissors' ? 'You lose! Scissors beats Paper' :
-      computerSelection === 'rock' ? 'You win! Paper beats Rock' :
-      'It\'s a tie!';
-    
-      return result;
-
-    case 'scissors':
-      result = computerSelection === 'rock' ? 'You lose! Rock beats Scissors' :
-      computerSelection === 'paper' ? 'You win! Scissors beats Paper' :
-      'It\'s a tie!';
-
-      return result;
+    case 2:
+      console.log(`It's a tie!`)
   }
 }
 
-const roundResult = playRound(getComputerChoice(),getPlayerChoice());
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (i = 0; i < 1; i++) {
+    playRound(getComputerChoice(), getPlayerChoice())
+  }
+}
 
 console.log(roundResult);
 // Ensure the player's choice is valid, then return it in lowercase
