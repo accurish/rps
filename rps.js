@@ -52,15 +52,3 @@ function game() {
     playRound(getComputerChoice(), getPlayerChoice())
   }
 }
-
-console.log(roundResult);
-// Ensure the player's choice is valid, then return it in lowercase
-/*function validatePlayerChoice(playerChoice) {
-  playerChoice = playerChoice.toLowerCase();
-  
-  if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-    return playerChoice;
-  } else {
-    getPlayerChoice();
-  }
-} */
