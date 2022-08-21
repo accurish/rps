@@ -12,7 +12,7 @@ function getPlayerChoice() {
 }
 
 // Pass computer and player selections on switches for each player selection, then output the result
-function playRPS(computerSelection, playerSelection) {
+function playRound(computerSelection, playerSelection) {
   const result;
   
   switch (playerSelection) {
@@ -40,9 +40,9 @@ function playRPS(computerSelection, playerSelection) {
   }
 }
 
-const gameResult = playRPS(getComputerChoice(),getPlayerChoice());
+const roundResult = playRound(getComputerChoice(),getPlayerChoice());
 
-console.log(gameResult);
+console.log(roundResult);
 // Ensure the player's choice is valid, then return it in lowercase
 /*function validatePlayerChoice(playerChoice) {
   playerChoice = playerChoice.toLowerCase();
