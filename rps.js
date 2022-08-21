@@ -25,11 +25,12 @@ function playRound(computerSelection, playerSelection) {
     result = computerSelection === 'rock' ? 0 :
     computerSelection === 'paper' ? 1 : 2;
   }
+  logResult(result, computerSelection, playerSelection);
   return result;
 }
 
 // Output round result to the console
-function logResult(result) {
+function logResult(result, computerSelection, playerSelection) {
   switch (result) {
     case 0:
       console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
