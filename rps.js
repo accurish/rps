@@ -11,7 +11,7 @@ function getPlayerChoice() {
   return playerChoice.toLowerCase();
 }
 
-// Compare each choice to get a result, which is output as an int
+// Compare each choice to get a result, which is returned as an int
 function playRound(computerSelection, playerSelection) {
   let result;
 
@@ -29,7 +29,7 @@ function playRound(computerSelection, playerSelection) {
   return result;
 }
 
-// Output round result to the console
+// Convert round result to be human readable and log to console
 function logResult(result, computerSelection, playerSelection) {
   switch (result) {
     case 0:
@@ -45,11 +45,36 @@ function logResult(result, computerSelection, playerSelection) {
   }
 }
 
+// Loop through 5 rounds and display an overall winner
 function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (i = 0; i < 1; i++) {
-    playRound(getComputerChoice(), getPlayerChoice())
+  for (i = 0; i < 5; i++) {
+    let roundResult = playRound(getComputerChoice(), getPlayerChoice());
+
+    switch (roundResult) {
+      case 0:
+        computerScore++;
+        break;
+      
+      case 1:
+        playerScore++;
+        break;
+
+      default:
+        break;
+
+    }
+
+    console.log(`The score is ${playerScore} - ${computerScore}`);
   }
+  let finalResult = playerScore > computerScore ? 'You won!' :
+    computerScore > playerScore ? 'You lost!' : 'You tied!';
+
+  let message = 'Game over! ' + finalResult;
+
+  console.log(message);
 }
+
+game()
