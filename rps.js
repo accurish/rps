@@ -1,19 +1,19 @@
 // Randomly generate computer choice
 function getComputerChoice() {
-  let choices = ['rock', 'paper', 'scissors'];
-  let guess = Math.floor(Math.random() * 3);
+  const choices = ['rock', 'paper', 'scissors'];
+  const guess = Math.floor(Math.random() * 3);
   return choices[guess];
 }
 
 // Get choice from the player and make it case insensitive
 function getPlayerChoice() {
-  let playerChoice = prompt('Enter Rock, Paper, or Scissors');
+  const playerChoice = prompt('Enter Rock, Paper, or Scissors');
   return playerChoice.toLowerCase();
 }
 
 // Pass computer and player selections on switches for each player selection, then output the result
 function playRPS(computerSelection, playerSelection) {
-  let result;
+  const result;
   
   switch (playerSelection) {
     
@@ -40,7 +40,7 @@ function playRPS(computerSelection, playerSelection) {
   }
 }
 
-let gameResult = playRPS(getComputerChoice(),getPlayerChoice());
+const gameResult = playRPS(getComputerChoice(),getPlayerChoice());
 
 console.log(gameResult);
 // Ensure the player's choice is valid, then return it in lowercase
