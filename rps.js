@@ -22,29 +22,27 @@ function playRPS(computerSelection, playerSelection) {
       computerSelection === 'scissors' ? 'You win! Rock beats Scissors' :
       'It\'s a tie!';
 
-      console.log(result);
-      break;
+      return result;
 
     case 'paper':
-        result = computerSelection === 'scissors' ? 'You lose! Scissors beats Paper' :
-        computerSelection === 'rock' ? 'You win! Paper beats Rock' :
-        'It\'s a tie!';
+      result = computerSelection === 'scissors' ? 'You lose! Scissors beats Paper' :
+      computerSelection === 'rock' ? 'You win! Paper beats Rock' :
+      'It\'s a tie!';
     
-        console.log(result);
-        break;
+      return result;
 
     case 'scissors':
       result = computerSelection === 'rock' ? 'You lose! Rock beats Scissors' :
       computerSelection === 'paper' ? 'You win! Scissors beats Paper' :
       'It\'s a tie!';
 
-      console.log(result);
-      break;
+      return result;
   }
 }
 
-playRPS(getComputerChoice(),getPlayerChoice());
+let gameResult = playRPS(getComputerChoice(),getPlayerChoice());
 
+console.log(gameResult);
 // Ensure the player's choice is valid, then return it in lowercase
 /*function validatePlayerChoice(playerChoice) {
   playerChoice = playerChoice.toLowerCase();
