@@ -45,36 +45,11 @@ function logResult(result, computerSelection, playerSelection) {
   }
 }
 
-// Loop through 5 rounds and display an overall winner
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
+const chooseRock = document.querySelector('#rock');
+chooseRock.addEventListener('click', () => playRound(getComputerChoice(), chooseRock.id));
 
-  for (i = 0; i < 5; i++) {
-    let roundResult = playRound(getComputerChoice(), getPlayerChoice());
+const choosePaper = document.querySelector('#paper');
+choosePaper.addEventListener('click', () => playRound(getComputerChoice(), choosePaper.id));
 
-    switch (roundResult) {
-      case 0:
-        computerScore++;
-        break;
-      
-      case 1:
-        playerScore++;
-        break;
-
-      default:
-        break;
-
-    }
-
-    console.log(`The score is ${playerScore} - ${computerScore}`);
-  }
-  let finalResult = playerScore > computerScore ? 'You won!' :
-    computerScore > playerScore ? 'You lost!' : 'You tied!';
-
-  let message = 'Game over! ' + finalResult;
-
-  console.log(message);
-}
-
-game()
+const chooseScissors = document.querySelector('#scissors');
+chooseScissors.addEventListener('click', () => playRound(getComputerChoice(), chooseScissors.id));
