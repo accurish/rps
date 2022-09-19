@@ -10,14 +10,14 @@ function playRound(computerSelection, playerSelection) {
   let result;
 
   if (playerSelection === 'rock') {
-    result = computerSelection === 'paper' ? 0 :
-    computerSelection === 'scissors' ? 1 : 2;
+    result = computerSelection === 'paper' ? 'Lose' :
+    computerSelection === 'scissors' ? 'Win' : 'Draw';
   } else if (playerSelection === 'paper') {
-    result = computerSelection === 'scissors' ? 0 :
-    computerSelection === 'rock' ? 1 : 2;
+    result = computerSelection === 'scissors' ? 'Lose' :
+    computerSelection === 'rock' ? 'Win' : 'Draw';
   } else {
-    result = computerSelection === 'rock' ? 0 :
-    computerSelection === 'paper' ? 1 : 2;
+    result = computerSelection === 'rock' ? 'Lose' :
+    computerSelection === 'paper' ? 'Win' : 'Draw';
   }
   logResult(result, computerSelection, playerSelection);
   return result;
@@ -25,17 +25,19 @@ function playRound(computerSelection, playerSelection) {
 
 // Convert round result to be human readable and log to console
 function logResult(result, computerSelection, playerSelection) {
+  playerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
+  computerSelection = computerSelection[0].toUpperCase() + computerSelection.substring(1);
   switch (result) {
-    case 0:
+    case 'Lose':
       console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
       break;
     
-    case 1:
+    case 'Win':
       console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
       break;
 
-    case 2:
-      console.log(`It's a tie!`)
+    case 'Draw':
+      console.log(`It's a draw!`)
   }
 }
 
