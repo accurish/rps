@@ -1,3 +1,6 @@
+* {
+    font-family: sans-serif;
+}
 #button-box {
     display: flex;
     justify-content: center;
@@ -11,5 +14,8 @@
 .choice-button {
     width: 100px;
     padding: 5px;
-    margin: 10px 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-weight: 700;
 }

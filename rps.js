@@ -41,7 +41,7 @@ function logResult(result, computerSelection, playerSelection) {
       break;
 
     case 'Draw':
-      resultText.textContent = `It's a draw!`
+      resultText.textContent = `It's a draw! You both chose ${playerSelection}.`;
   }
 }
 
