@@ -5,12 +5,6 @@ function getComputerChoice() {
   return choices[guess];
 }
 
-// Get choice from the player and make it case insensitive
-function getPlayerChoice() {
-  const playerChoice = prompt('Enter Rock, Paper, or Scissors');
-  return playerChoice.toLowerCase();
-}
-
 // Compare each choice to get a result, which is returned as an int
 function playRound(computerSelection, playerSelection) {
   let result;
