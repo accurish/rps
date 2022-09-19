@@ -25,19 +25,23 @@ function playRound(computerSelection, playerSelection) {
 
 // Convert round result to be human readable and log to console
 function logResult(result, computerSelection, playerSelection) {
+  // Capitalize terms for aesthetics
   playerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
   computerSelection = computerSelection[0].toUpperCase() + computerSelection.substring(1);
+
+  var resultText = document.querySelector('#result-box');
+
   switch (result) {
     case 'Lose':
-      console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
+      resultText.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`
       break;
     
     case 'Win':
-      console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
+      resultText.textContent = `You win! ${playerSelection} beats ${computerSelection}.`
       break;
 
     case 'Draw':
-      console.log(`It's a draw!`)
+      resultText.textContent = `It's a draw!`
   }
 }
 

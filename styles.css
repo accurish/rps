@@ -1,0 +1,15 @@
+#button-box {
+    display: flex;
+    justify-content: center;
+}
+
+#result-box {
+    display: flex;
+    justify-content: center;
+}
+
+.choice-button {
+    width: 100px;
+    padding: 5px;
+    margin: 10px 10px;
+}
